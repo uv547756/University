@@ -1,0 +1,11 @@
+%Given Vector:
+x = [1 8 3 9 0 1];
+%Sum of all it's elements using sum() function:
+s = sum(x);
+%Running Sum of all the elements in the Vector:
+runningSum = sum(hankel([zeros(1, numel(x)-1), x(1)], x))
+seq = rand(1,20);
+plot(seq)
+title('Random Sequence')
+xlabel('Index');
+ylabel('Value');
