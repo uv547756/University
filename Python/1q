@@ -1,0 +1,9 @@
+'''string1 = input(str("Enter a string: "))
+lis = []
+for i in range(len(string1)-1):
+    lis[i]=string1[i]
+    print(lis)
+'''
+string1 = "Hello"
+lis = list(string1)
+print(lis)
