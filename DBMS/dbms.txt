@@ -16,3 +16,21 @@ insert into primary(name,age) values('Utkarsh',20); //err as primary key col nee
 insert into product_master(product_no, description, profit_percentage, unit_measure, qty_on_hand, reorder_lvl, sell_price, cost_price) values('7601','test',3.2,'piece',10,20,1000,900);
 select product_no, description, sell_price * 0.05, sell_price * 1.05 from product_master;
  //output: sell_price*0.05 = 50 and sell_price*1.05 = 1050
+
+select  sell_price*0.05 increase, sell_price*1.05 new_price from product_master;
+
+select product_no, description, profit_percentage, sell_price from product_master where profit_percentage >= 10 and profit_percentage <= 20;
+// no rows selected
+
+select client_no, name, city, pincode from client_master where pincode=400054 or pincode=400057;
+// lists rows with pincode=400054 or 400057
+
+select * from client_master where not (city='Bombay' or city='Delhi');
+// lists rows with city != bombay or city != delhi
+
+select product_no, description, profit_percentage, sell_price from product_master where profit_percentage between 10 and 20;
+// lists rows with profit_percentage b/w 10 and 20
+
+select product_no, description, profit_percentage, sell_price from product_master where not profit_percentage between 10 and 20;
+// lists rows with profit_percentage not b/w 10 and 20
+
