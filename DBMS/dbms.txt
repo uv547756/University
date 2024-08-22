@@ -1,0 +1,18 @@
+create table constraint(name varchar(10) NOT NULL, age number(3));
+insert into constraint(name, age) values('Utkarsh',20);
+
+insert into constraint(age) values(20); //error as name cannot be null
+
+create table constraint2(name varchar(10) unique, age number(3));
+insert into constraint2(name,age) values('Utkarsh',20);
+
+insert into constraint2(name,age) values('Utkarsh',20); //error as name colmn needs to be unique
+
+create table primary(name varchar(10), age number(3), primary key(name));
+insert into primary(name,age) values('Utkarsh',20);
+insert into primary(name,age) values('Utkarsh',20); //err as primary key col needs to be unique
+
+
+insert into product_master(product_no, description, profit_percentage, unit_measure, qty_on_hand, reorder_lvl, sell_price, cost_price) values('7601','test',3.2,'piece',10,20,1000,900);
+select product_no, description, sell_price * 0.05, sell_price * 1.05 from product_master;
+ //output: sell_price*0.05 = 50 and sell_price*1.05 = 1050
