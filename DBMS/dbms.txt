@@ -34,3 +34,31 @@ select product_no, description, profit_percentage, sell_price from product_maste
 select product_no, description, profit_percentage, sell_price from product_master where not profit_percentage between 10 and 20;
 // lists rows with profit_percentage not b/w 10 and 20
 
+
+
+
+
+################################# Foreign Key #################################################
+create table student2(student_id number(10) primary key, name varchar(10), course varchar(6));
+
+create table dept(dept_name varchar(10), student_id number(10) references student2, dept_id number(10) primary key);
+
+insert into dept values('btech', 101, 1);
+//	insert into dept values('btech', 101, 1)
+	*
+	ERROR at line 1:
+	ORA-02291: integrity constraint (BTCS131.SYS_C0014976) violated - parent key not found
+
+create table dept(dept_name varchar(10), student_id number(10) references student2, dept_id number(10) primary key);
+
+select * from student2;
+select * from dept;
+insert into dept values('MTech', 103, 3);
+insert into dept values('BTech', 102, 2);
+insert into dept values('BTech', 101, 1);
+insert into student2 values(103, 'Utkarsh3','btech');
+insert into student2 values(102, 'Utkarsh2','btech');
+insert into student2 values(101, 'Utkarsh','btech');
+insert into dept values('btech', 101, 1);
+
+
